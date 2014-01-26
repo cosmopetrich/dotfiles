@@ -1,0 +1,47 @@
+autoload -Uz compinit
+
+### Theme
+DEFAULT_USER=`whoami`
+ZSH_THEME=agnoster
+
+### Spell-correction
+setopt correct
+
+### Always 'pushd' when changing directories
+setopt auto_pushd pushdminus pushdsilent pushdtohome pushdignoredups
+
+### History
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=100000
+setopt sharehistory
+setopt histignoredups
+
+### Generic environment
+export EDITOR="/usr/bin/vim"
+export PATH="$PATH:~/.gem/ruby/2.0.0/bin:/usr/bin/vendor_perl/"
+
+### Generic aliases
+alias ls='ls --color=auto'
+alias whois='whois -H'
+
+### Temporary (hopefully) vim aliases due to broken powerline package
+alias vim='PYTHONPATH=/usr/lib/python3.3/site-packages vim'
+alias gvim='PYTHONPATH=/usr/lib/python3.3/site-packages gvim'
+
+### Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+### Completion
+compinit
+
+### Syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+### Oh-my-zsh
+ZSH=/usr/share/oh-my-zsh/
+source /usr/share/oh-my-zsh/oh-my-zsh.sh
+
+### Include Anchor-specific stuff, if available
+[ -f ~/.zshrc.anchor ] && source ~/.zshrc.anchor

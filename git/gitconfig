@@ -1,0 +1,15 @@
+[user]
+	email = cosmo.petrich@anchor.net.au
+	name = Cosmo Petrich
+[color]
+	ui = true
+[help]
+	autocorrect = 20
+[log]
+	date = local
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore
+[rerere]
+	enabled = true
