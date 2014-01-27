@@ -186,8 +186,8 @@ bar {
         position top
 
         colors {
-				background $color08
-				statusline $color12
+            background $color08
+            statusline $color12
 
             # colorclass        <border>      <bg>          <text>
             focused_workspace   $color04      $color04      $color07
