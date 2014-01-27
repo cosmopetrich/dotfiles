@@ -205,9 +205,9 @@ exec_always /usr/bin/xsetroot -solid '#002B36'
 
 # Screen locking via i3lock
 set $lockcommand "i3lock -c 000000"
-exec_always --no-startup-id /usr/bin/flock --nonblock /home/cosmo/.xautolock.lock --command /usr/bin/xautolock -time 5 -locker $lockcommand &
+exec_always --no-startup-id /usr/bin/flock --nonblock /home/cosmo/.xautolock.lock --command "/usr/bin/xautolock -time 5 -locker $lockcommand" &
 bindsym $mod+w+l exec --no-startup-id $lockcommand &
 
 # Start programs automatically
-exec_always --no-startup-id /usr/bin/flock --nonblock /home/cosmo/.redshift.lock --command /usr/bin/redshift -l '-33:151' &
+exec --no-startup-id /usr/bin/redshift -l '-33:151' &
 exec /usr/bin/pidgin &
