@@ -24,6 +24,8 @@ export PATH="$PATH:~/.gem/ruby/2.0.0/bin:/usr/bin/vendor_perl/"
 ### Generic aliases
 alias ls='ls --color=auto'
 alias whois='whois -H'
+alias wget='curl -O'
+alias s='ssh'
 
 ### Temporary (hopefully) vim aliases due to broken powerline package
 alias vim='PYTHONPATH=/usr/lib/python3.3/site-packages vim'
