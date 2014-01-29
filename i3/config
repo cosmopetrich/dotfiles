@@ -200,7 +200,15 @@ bar {
 # Remove titlebars and borders
 new_window 1pixel
 
-# Set background
+### Quickswitch commands
+# Search windows
+bindsym $mod+b exec /home/cosmo/work/scripts/path/quickswitch -d "dmenu -b -i -l 20 -nb '$color08' -nf '$color04'"
+# Move window to current workspace
+bindsym $mod+m exec /home/cosmo/work/scripts/path/quickswitch -m -d "dmenu -b -i -l 20 -nb '$color08' -nf '$color04'"
+# Find an empty workspace
+bindsym $mod+n exec /home/cosmo/work/scripts/path/quickswitch -e
+
+### Set background
 exec_always /usr/bin/xsetroot -solid '#002B36'
 
 # Screen locking via i3lock
