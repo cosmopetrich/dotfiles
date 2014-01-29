@@ -212,9 +212,8 @@ bindsym $mod+n exec /home/cosmo/work/scripts/path/quickswitch -e
 exec_always /usr/bin/xsetroot -solid '#002B36'
 
 # Screen locking via i3lock
-set $lockcommand "i3lock -c 000000"
-exec_always --no-startup-id /usr/bin/flock --nonblock /home/cosmo/.xautolock.lock --command "/usr/bin/xautolock -time 5 -locker $lockcommand" &
-bindsym $mod+w+l exec --no-startup-id $lockcommand &
+exec_always --no-startup-id /usr/bin/flock --nonblock /home/cosmo/.xautolock.lock --command "/usr/bin/xautolock -time 5 -locker 'i3lock -c 000000'" &
+bindsym $mod+Control+l exec /usr/bin/xautolock -locknow
 
 # Start programs automatically
 exec --no-startup-id /usr/bin/redshift -l '-33:151' &
