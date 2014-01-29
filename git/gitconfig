@@ -11,5 +11,6 @@
 	default = simple
 [core]
 	excludesfile = ~/.gitignore
+	pager = less -FERSX
 [rerere]
 	enabled = true
