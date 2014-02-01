@@ -45,6 +45,8 @@ ethernet tun1 {
 
 battery 1 {
         format = "%status %percentage %remaining"
+        integer_battery_capacity = true
+        last_full_capacity = true
 }
 
 tztime local {
