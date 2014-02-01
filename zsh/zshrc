@@ -14,7 +14,7 @@ setopt auto_pushd pushdminus pushdsilent pushdtohome pushdignoredups
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=100000
-setopt sharehistory
+setopt incappendhistory
 setopt histignoredups
 
 ### Generic environment
