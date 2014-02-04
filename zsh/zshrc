@@ -18,7 +18,7 @@ setopt incappendhistory
 setopt histignoredups
 
 ### Generic environment
-export EDITOR="PYTHONPATH=/usr/lib/python3.3/site-packages /usr/bin/vim"
+export EDITOR="/usr/bin/vim"
 export PATH="${PATH}:${HOME}/.gem/ruby/2.1.0/bin/:/usr/bin/vendor_perl/"
 
 ### Generic aliases
@@ -30,6 +30,7 @@ alias gzip='pigz'
 alias gunzip'unpigz'
 
 ### Temporary (hopefully) vim aliases due to broken powerline package
+export EDITOR="PYTHONPATH=/usr/lib/python3.3/site-packages /usr/bin/vim"
 alias vim='PYTHONPATH=/usr/lib/python3.3/site-packages vim'
 alias gvim='PYTHONPATH=/usr/lib/python3.3/site-packages gvim'
 
