@@ -34,14 +34,6 @@ set incsearch  " Search as characters are typed
 " set colorcolumn=81
 " highlight ColorColumn ctermbg=grey guibg=grey
 
-" Highlight trailing whitespace when exiting insert mode
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
 " Retab macro
 :command! -nargs=1 -range Retab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
@@ -67,3 +59,11 @@ filetype indent plugin on
 
 " Activate theme
 colorscheme solarized
+
+" Highlight trailing whitespace when exiting insert mode
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
