@@ -11,15 +11,17 @@ source /usr/share/oh-my-zsh/oh-my-zsh.sh
 ### Spell-correction
 setopt correct
 
-### Always 'pushd' when changing directories
-setopt auto_pushd pushdminus pushdsilent pushdtohome pushdignoredups
-
 ### History
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=100000
 setopt incappendhistory
 setopt histignoredups
+unsetopt sharehistory
+
+# pushd settings
+setopt pushdignoredups
+unsetopt autopushd
 
 ### Generic environment
 export EDITOR="/usr/bin/vim"
