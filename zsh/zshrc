@@ -4,6 +4,10 @@ autoload -Uz compinit
 DEFAULT_USER=`whoami`
 ZSH_THEME=agnoster
 
+### Oh-my-zsh
+ZSH=/usr/share/oh-my-zsh/
+source /usr/share/oh-my-zsh/oh-my-zsh.sh
+
 ### Spell-correction
 setopt correct
 
@@ -43,10 +47,6 @@ compinit
 
 ### Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-### Oh-my-zsh
-ZSH=/usr/share/oh-my-zsh/
-source /usr/share/oh-my-zsh/oh-my-zsh.sh
 
 ### Include Anchor-specific stuff, if available
 [ -f $HOME/.zshrc.anchor ] && source $HOME/.zshrc.anchor
