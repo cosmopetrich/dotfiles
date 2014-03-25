@@ -34,6 +34,9 @@ alias wget='curl -O'
 alias s='ssh'
 alias gzip='pigz'
 alias gunzip'unpigz'
+alias grep='ag --skip-vcs-ignores'
+alias ack='ag --skip-vcs-ignores'
+alias ag='ag --skip-vcs-ignores'
 
 ### Temporary (hopefully) vim aliases due to broken powerline package
 export EDITOR="PYTHONPATH=/usr/lib/python3.3/site-packages /usr/bin/vim"
