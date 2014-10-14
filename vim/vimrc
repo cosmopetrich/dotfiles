@@ -30,6 +30,12 @@ set infercase	" Fix case when doing case-insensitive auto-complete
 set smartcase	" Uppercase letters in search imply case-sensitivity
 set incsearch  " Search as characters are typed
 
+" Set backup/swap/undo file locations
+" The trailing '//' causes vim to construct filenames from full paths
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swap//
+set undodir=~/.vim/.undo//
+
 " Highlight column 81
 " set colorcolumn=81
 " highlight ColorColumn ctermbg=grey guibg=grey
