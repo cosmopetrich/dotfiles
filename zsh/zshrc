@@ -30,10 +30,7 @@ export PATH="${PATH}:${HOME}/.gem/ruby/2.1.0/bin/:/usr/bin/vendor_perl/"
 ### Generic aliases
 alias ls='ls --color=auto'
 alias whois='whois -H'
-alias wget='curl -O'
 alias s='ssh'
-alias gzip='pigz'
-alias gunzip'unpigz'
 alias grep='ag --skip-vcs-ignores'
 alias ack='ag --skip-vcs-ignores'
 alias ag='ag --skip-vcs-ignores'
