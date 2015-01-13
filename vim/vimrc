@@ -57,6 +57,7 @@ Plugin 'altercation/vim-colors-solarized.git'	" Colour scheme
 Plugin 'bling/vim-airline'								" A cool status bar
 Plugin 'tpope/vim-fugitive'							" Helpers for working in git repos
 Plugin 'rodjek/vim-puppet.git'						" Helpers for writing puppet manifests
+Plugin 'chase/vim-ansible-yaml'                 " Syntax plugin for ansible YAML
 
 Plugin 'godlygeek/tabular.git'
 Plugin 'msanders/snipmate.vim.git'
