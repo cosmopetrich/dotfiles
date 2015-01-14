@@ -1,19 +1,20 @@
 " General stuff
 set nocompatible     " vi can go to hell
 syntax on            " Enable syntax highlighting
+filetype off         " Disable filetype detection for vundle
 set nostartofline    " Keep to current column when moving cursor
 set hidden           " Allow multiple buffers
 set encoding=utf-8   " Use UTF-8 encoding
 
 " Indentation shit
 set autoindent       " Preserve indent from previous line
-set copyindent			" Copy indenting structure (tabs/spaces) from previous line
-set preserveindent	" Preserve indentation structure when re-indenting line
+set copyindent       " Copy indenting structure (tabs/spaces) from previous line
+set preserveindent   " Preserve indentation structure when re-indenting line
 set noexpandtab      " Hard tabs by default
 set nosmarttab       " I like the idea of this, but it always seems to cause problems
-set tabstop=3			" How many columns to display per tab
-set shiftwidth=3		" The number of columns to re-indent by
-set softtabstop=3		" The number of colums to insert for a tab
+set tabstop=3        " How many columns to display per tab
+set shiftwidth=3     " The number of columns to re-indent by
+set softtabstop=3    " The number of colums to insert for a tab
 
 " Display stuff
 set t_Co=256         " Enable 256 colours
@@ -26,8 +27,8 @@ set sidescrolloff=3  " Scroll before reaching the left/right of the window
 " Search/autocomplete stuff
 set hlsearch   " Highlight search results
 set ignorecase " Enable case-insensitivity by default
-set infercase	" Fix case when doing case-insensitive auto-complete
-set smartcase	" Uppercase letters in search imply case-sensitivity
+set infercase  " Fix case when doing case-insensitive auto-complete
+set smartcase  " Uppercase letters in search imply case-sensitivity
 set incsearch  " Search as characters are typed
 
 " Set backup/swap/undo file locations
@@ -50,13 +51,13 @@ set undodir=~/.vim/.undo//
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'								" Vundle plugin manager
+Plugin 'gmarik/Vundle.vim'                      " Vundle plugin manager
 
-Plugin 'scrooloose/syntastic.git'					" Syntax validator
-Plugin 'altercation/vim-colors-solarized.git'	" Colour scheme
-Plugin 'bling/vim-airline'								" A cool status bar
-Plugin 'tpope/vim-fugitive'							" Helpers for working in git repos
-Plugin 'rodjek/vim-puppet.git'						" Helpers for writing puppet manifests
+Plugin 'scrooloose/syntastic.git'               " Syntax validator
+Plugin 'altercation/vim-colors-solarized.git'   " Colour scheme
+Plugin 'bling/vim-airline'                      " A cool status bar
+Plugin 'tpope/vim-fugitive'                     " Helpers for working in git repos
+Plugin 'rodjek/vim-puppet.git'                  " Helpers for writing puppet manifests
 Plugin 'chase/vim-ansible-yaml'                 " Syntax plugin for ansible YAML
 
 Plugin 'godlygeek/tabular.git'
@@ -67,6 +68,9 @@ Plugin 'msanders/snipmate.vim.git'
 " End vundle config
 call vundle#end()
 
+" Pull crap in from plugins
+filetype plugin indent on
+
 " Enable detection for puppet plugin
 let g:puppet_module_detect=1
 
@@ -76,9 +80,6 @@ set noshowmode
 set timeout ttimeoutlen=50
 let g:airline_theme = "solarized"
 let g:airline_powerline_fonts = 1 " Use powerline symbols
-
-" Pull crap in from plugins
-filetype indent plugin on
 
 " Activate theme
 colorscheme solarized
