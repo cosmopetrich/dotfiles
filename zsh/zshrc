@@ -50,7 +50,7 @@ fi
 compinit
 
 ### Syntax highlighting
-source "${HOME}/.zsh/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${HOME}/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 ### Include Anchor-specific stuff, if available
 [ -f $HOME/.zshrc.anchor ] && source $HOME/.zshrc.anchor
