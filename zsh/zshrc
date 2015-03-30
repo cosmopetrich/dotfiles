@@ -6,6 +6,7 @@ ZSH_THEME=agnoster
 
 ### Oh-my-zsh
 ZSH="${HOME}/.zsh/oh-my-zsh/"
+DISABLE_AUTO_UPDATE="true"
 source "${ZSH}oh-my-zsh.sh"
 
 ### Spell-correction
