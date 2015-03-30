@@ -47,26 +47,8 @@ set undodir=~/.vim/.undo//
 " Spellcheck macro
 :command Spellcheck set spell spelllang=en
 
-" Begin vundle config
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'                      " Vundle plugin manager
-
-Plugin 'scrooloose/syntastic.git'               " Syntax validator
-Plugin 'altercation/vim-colors-solarized.git'   " Colour scheme
-Plugin 'bling/vim-airline'                      " A cool status bar
-Plugin 'tpope/vim-fugitive'                     " Helpers for working in git repos
-Plugin 'rodjek/vim-puppet.git'                  " Helpers for writing puppet manifests
-Plugin 'chase/vim-ansible-yaml'                 " Syntax plugin for ansible YAML
-
-Plugin 'godlygeek/tabular.git'
-Plugin 'msanders/snipmate.vim.git'
-
-" Solarized colour scheme
-
-" End vundle config
-call vundle#end()
+" Load modules
+execute pathogen#infect()
 
 " Pull crap in from plugins
 filetype plugin indent on
