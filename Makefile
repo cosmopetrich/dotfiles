@@ -1,3 +1,5 @@
+all:: git vim zsh
+
 git::
 	@ln -fs $(PWD)/git/gitignore ${HOME}/.gitignore
 	@ln -fs $(PWD)/git/gitconfig ${HOME}/.gitconfig
@@ -10,5 +12,3 @@ zsh::
 	@ln -fs $(PWD)/zsh/ ${HOME}/.zsh
 	@ln -fs ${HOME}/.zsh/zshrc ${HOME}/.zshrc
 	@ln -fs ${HOME}/.zsh/zshrc.d ${HOME}/.zshrc.d
-
-all:: git vim zsh
