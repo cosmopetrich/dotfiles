@@ -40,18 +40,19 @@ export EDITOR="PYTHONPATH=/usr/lib/python3.3/site-packages /usr/bin/vim"
 alias vim='PYTHONPATH=/usr/lib/python3.3/site-packages vim'
 alias gvim='PYTHONPATH=/usr/lib/python3.3/site-packages gvim'
 
-### Rbenv
-RBENV_BIN="${HOME}/.rbenv/bin"
-if [ -f "$RBENV_BIN" ]; then
-	export PATH="${RBENV_BIN}:${PATH}"
-	eval "$(rbenv init -)"
-fi
-
 ### Completion
 compinit
 
 ### Syntax highlighting
 source "${HOME}/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+### Include misc config
+ZSHRC_DIR="${HOME}/.zshrc.d"
+if [ -d "${ZSHRC_DIR}" ]; then
+	for rcfile in $ZSHRC_DIR/*.sh; do
+		source $rcfile
+	done
+fi
 
 ### Include Anchor-specific stuff, if available
 [ -f $HOME/.zshrc.anchor ] && source $HOME/.zshrc.anchor
