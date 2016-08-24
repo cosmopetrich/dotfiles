@@ -1,13 +1,7 @@
-autoload -Uz compinit
 
 ### Theme
 DEFAULT_USER=`whoami`
 ZSH_THEME=agnoster
-
-### Oh-my-zsh
-ZSH="${HOME}/.zsh/oh-my-zsh/"
-DISABLE_AUTO_UPDATE="true"
-source "${ZSH}oh-my-zsh.sh"
 
 ### Spell-correction
 setopt correct
@@ -25,26 +19,26 @@ setopt pushdignoredups
 unsetopt autopushd
 
 ### Generic environment
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/local/bin/mvim -v"
+alias vim="/usr/local/bin/mvim -v"
+alias vi="/usr/local/bin/mvim -v"
 
 ### Generic aliases
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias whois='whois -H'
-alias s='ssh'
-alias grep='ag --skip-vcs-ignores'
-alias ack='ag --skip-vcs-ignores'
-alias ag='ag --skip-vcs-ignores'
-
-### Temporary (hopefully) vim aliases due to broken powerline package
-export EDITOR="PYTHONPATH=/usr/lib/python3.3/site-packages /usr/bin/vim"
-alias vim='PYTHONPATH=/usr/lib/python3.3/site-packages vim'
-alias gvim='PYTHONPATH=/usr/lib/python3.3/site-packages gvim'
 
 ### Completion
+fpath=(/usr/local/share/zsh-completions $fpath)
+autoload -Uz compinit
 compinit
 
-### Syntax highlighting
-source "${HOME}/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+### Reverse search
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
+
+### Plugins
+source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 ### Include misc config
 ZSHRC_DIR="${HOME}/.zshrc.d"
@@ -54,5 +48,5 @@ if [ -d "${ZSHRC_DIR}" ]; then
 	done
 fi
 
-### Include Anchor-specific stuff, if available
-[ -f $HOME/.zshrc.anchor ] && source $HOME/.zshrc.anchor
+### Include I2G-specific stuff, if available
+[ -f $HOME/.zshrc.i2g ] && source $HOME/.zshrc.i2g
