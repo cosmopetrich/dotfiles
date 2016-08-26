@@ -61,7 +61,7 @@ set laststatus=2
 set noshowmode
 set timeout ttimeoutlen=50
 let g:airline_theme = "solarized"
-let g:airline_powerline_fonts = 1 " Use powerline symbols
+let g:airline_powerline_fonts = 1 " Don't use powerline symbols
 
 " Activate theme
 colorscheme solarized
