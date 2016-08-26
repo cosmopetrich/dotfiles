@@ -1,7 +1,6 @@
-
 ### Theme
 DEFAULT_USER=`whoami`
-ZSH_THEME=agnoster
+source  ~/.zsh/powerlevel9k/powerlevel9k.zsh-theme
 
 ### Spell-correction
 setopt correct
@@ -19,13 +18,14 @@ setopt pushdignoredups
 unsetopt autopushd
 
 ### Generic environment
-export EDITOR="/usr/local/bin/mvim -v"
-alias vim="/usr/local/bin/mvim -v"
-alias vi="/usr/local/bin/mvim -v"
+VIM_COMMAND="/usr/local/bin/mvim -v"
+export EDITOR=$VIM_COMMAND
+export GITEDITOR=$VIM_COMMAND
+alias vim=$VIM_COMMAND
+alias vi=$VIM_COMMAND
 
 ### Generic aliases
 alias ls='ls -G'
-alias whois='whois -H'
 
 ### Completion
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -38,7 +38,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 ### Plugins
 source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+#source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 ### Include misc config
 ZSHRC_DIR="${HOME}/.zshrc.d"
