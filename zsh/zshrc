@@ -1,52 +1,59 @@
-### Theme
-DEFAULT_USER=`whoami`
-source  ~/.zsh/powerlevel9k/powerlevel9k.zsh-theme
+# Theme
+DEFAULT_USER=$(whoami)
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_HIDE_BRANCH_ICON=true
+POWERLEVEL9K_FOLDER_ICON=""
+POWERLEVEL9K_HOME_ICON=""
+POWERLEVEL9K_HOME_SUB_ICON=""
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 
-### Spell-correction
-setopt correct
+# Plugins
+source "/usr/local/var/homebrew/linked/zplug/init.zsh"
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug load
 
-### History
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=100000
-setopt incappendhistory
-setopt histignoredups
-unsetopt sharehistory
+# History
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=1000
+SAVEHIST=1000
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
 
-# pushd settings
-setopt pushdignoredups
-unsetopt autopushd
-
-### Generic environment
-VIM_COMMAND="/usr/local/bin/mvim -v"
+# Neovim as vim
+VIM_COMMAND="nvim"
 export EDITOR=$VIM_COMMAND
 export GITEDITOR=$VIM_COMMAND
 alias vim=$VIM_COMMAND
-alias vi=$VIM_COMMAND
+alias vim=$VIM_COMMAND
 
-### Generic aliases
-alias ls='ls -G'
+# Fix delete key
+bindkey '^[[3~'   delete-char
+bindkey '^[[3;5~' delete-char
 
-### Completion
-fpath=(/usr/local/share/zsh-completions $fpath)
-autoload -Uz compinit
-compinit
-
-### Reverse search
-bindkey -v
+# CTRL+R for history search
+autoload -Uz history-incremental-pattern-search-backward
 bindkey '^R' history-incremental-pattern-search-backward
 
-### Plugins
-source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-#source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# Up/down for history navigation
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+[[ -n "$key[Up]" ]] && bindkey -- "$key[Up]" up-line-or-beginning-search
+[[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
 
-### Include misc config
-ZSHRC_DIR="${HOME}/.zshrc.d"
-if [ -d "${ZSHRC_DIR}" ]; then
-	for rcfile in $ZSHRC_DIR/*.sh; do
-		source $rcfile
-	done
+# Misc configs
+ZSHRC_LOCAL="${HOME}/.zshrc.local"
+if [[ -f "${ZSHRC_LOCAL}" ]]; then
+	source "${ZSHRC_LOCAL}"
 fi
-
-### Include I2G-specific stuff, if available
-[ -f $HOME/.zshrc.i2g ] && source $HOME/.zshrc.i2g

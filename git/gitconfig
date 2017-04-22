@@ -14,3 +14,7 @@
 	pager = less -FERSX
 [rerere]
 	enabled = true
+[include]
+	path = /Users/CosmoPetrich/.gitconfig.reflow
+[alias]
+	git = clone
